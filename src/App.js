@@ -3,7 +3,7 @@ import "./App.css";
 import DialogContainer from "./components/Dialogs/DialogContainer";
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
-import Profile from "./components/Profile/Profile";
+import ProfileConatainer from "./components/Profile/ProfileContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 
 function App(props) {
@@ -13,9 +13,9 @@ function App(props) {
       <NavBar />
       <div className="content">
         <Routes>
-          <Route path="dialogs" element={<DialogContainer />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="users" element={<UsersContainer />} />
+          <Route path="dialogs/" element={<DialogContainer />} />
+          <Route path="profile/" element={<ProfileConatainer />} />
+          <Route path="users/" element={<UsersContainer />} />
         </Routes>
       </div>
     </div>
