@@ -6,3 +6,8 @@
 .header img {
   width: 20px
 }
+
+.login {
+  color: red;
+  margin-left: 0;
+}

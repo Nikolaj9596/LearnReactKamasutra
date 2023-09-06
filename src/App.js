@@ -1,22 +1,22 @@
-import { Route, Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "./App.css";
 import DialogContainer from "./components/Dialogs/DialogContainer";
-import Header from "./components/Header/Header";
+import HeaderContainer from "./components/Header/HeaderContainer";
 import NavBar from "./components/NavBar/NavBar";
 import ProfileConatainer from "./components/Profile/ProfileContainer";
 import UsersContainer from "./components/Users/UsersContainer";
+import Login from "./components/Login/Login";
 
-function App(props) {
+function App() {
   return (
     <div className="App">
-      <Header />
+      <HeaderContainer />
       <NavBar />
       <div className="content">
-        <Routes>
-          <Route path="dialogs/" element={<DialogContainer />} />
-          <Route path="profile/" element={<ProfileConatainer />} />
-          <Route path="users/" element={<UsersContainer />} />
-        </Routes>
+        <Route path="/dialogs" render={() => <DialogContainer />} />
+        <Route path="/profile/:userid?" render={() => <ProfileConatainer />} />
+        <Route path="/users" render={() => <UsersContainer />} />
+        <Route path="/login" render={() => <Login />} />
       </div>
     </div>
   );

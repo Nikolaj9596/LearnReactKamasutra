@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  sendMessageActionCreater,
-  updateMessageBodyActionCreater,
-} from "../../redux/message-reducer";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import Dialog from "./Dialog/Dialog";
 import style from "./Dialogs.module.css";
 import Message from "./Message/Massage";
@@ -26,6 +23,9 @@ const Dialogs = (props) => {
     let bodyText = event.target.value;
     props.newMessageChange(bodyText);
   };
+  if (!props.isAuth) {
+    return <Redirect to={"/login"} />;
+  }
 
   return (
     <div className={style.dialogs}>
